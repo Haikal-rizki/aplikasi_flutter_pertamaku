@@ -1,5 +1,6 @@
-import 'package:aplikasi_flutter_pertamaku/Ui/produk_form.dart';
+//import 'package:aplikasi_flutter_pertamaku/Ui/produk_form.dart';
 import 'package:flutter/material.dart';
+import 'Ui/navigator_drawer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: "Aplikasi Flutter Pertama",
-      home: ProdukForm(),
+      home: NavigatorDrawer(),
     );
   }
 }
