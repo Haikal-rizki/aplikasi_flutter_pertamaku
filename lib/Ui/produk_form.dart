@@ -140,6 +140,15 @@ class _ProdukFormState extends State<ProdukForm> {
                     namaProduk: namaProduk,
                     harga: harga,
                   ))));
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            content: Text("Produk Berhasil Disimpan."),
+            action: SnackBarAction(
+              label: "CANCEL",
+              onPressed: () {
+                print("Tidak Jadi Disimpan");
+              },
+            ),
+          ));
         },
         child: const Text('Simpan'));
   }

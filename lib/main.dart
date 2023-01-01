@@ -27,72 +27,75 @@ class NavigatorDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Halaman utama"),
-      ),
-      drawer: Drawer(
-        child: Column(children: [
-          Container(
-            padding: const EdgeInsets.all(20),
-            width: double.infinity,
-            height: 150,
-            color: Colors.deepPurple,
-            alignment: Alignment.bottomLeft,
-            child: const Text(
-              "MENU PILIHAN",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 34,
-              ),
-            ),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          ListTile(
-            onTap: () {
-              Navigator.of(context).pushReplacement(MaterialPageRoute(
-                builder: (context) => produkpage(),
-              ));
-            },
-            leading: Icon(
-              Icons.home,
-              size: 35,
-            ),
-            title: Text(
-              "PRODUK",
-              style: TextStyle(
-                fontSize: 25,
-              ),
-            ),
-          ),
-          ListTile(
-            onTap: () {
-              Navigator.of(context).pushReplacement(MaterialPageRoute(
-                builder: (context) => ProdukForm(),
-              ));
-            },
-            leading: Icon(
-              Icons.home,
-              size: 35,
-            ),
-            title: Text(
-              "TAMBAH PRODUK",
-              style: TextStyle(
-                fontSize: 25,
-              ),
-            ),
-          )
-        ]),
-      ),
-      body: const Center(
-        child: Text(
-          "SELAMAT DATANG",
-          style: TextStyle(
-            fontSize: 35,
-          ),
+        appBar: AppBar(
+          title: const Text("Halaman utama"),
         ),
-      ),
-    );
+        drawer: Drawer(
+          child: Column(children: [
+            Container(
+              padding: const EdgeInsets.all(20),
+              width: double.infinity,
+              height: 150,
+              color: Colors.deepPurple,
+              alignment: Alignment.bottomLeft,
+              child: const Text(
+                "MENU PILIHAN",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 34,
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            ListTile(
+              onTap: () {
+                Navigator.of(context).pushReplacement(MaterialPageRoute(
+                  builder: (context) => produkpage(),
+                ));
+              },
+              leading: Icon(
+                Icons.home,
+                size: 35,
+              ),
+              title: Text(
+                "PRODUK",
+                style: TextStyle(
+                  fontSize: 25,
+                ),
+              ),
+            ),
+            ListTile(
+              onTap: () {
+                Navigator.of(context).pushReplacement(MaterialPageRoute(
+                  builder: (context) => ProdukForm(),
+                ));
+              },
+              leading: Icon(
+                Icons.home,
+                size: 35,
+              ),
+              title: Text(
+                "TAMBAH PRODUK",
+                style: TextStyle(
+                  fontSize: 25,
+                ),
+              ),
+            )
+          ]),
+        ),
+        body: Center(
+          child: ElevatedButton(
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text("INI HALAMAN UTAMA"),
+                ),
+              );
+            },
+            child: Text("SHOW SNACKBAR"),
+          ),
+        ));
   }
 }
